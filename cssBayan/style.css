@@ -136,11 +136,11 @@ footer .container {
 }
 
 .RSS {
-    max-width: 12vw;
+    height: 5vh;
 }
 
 .Git {
-    max-width: 7vw;
+    max-height: 5vh;
 }
 
 .year {
