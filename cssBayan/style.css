@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+body {
+    font-family: Verdana;
+    font-size: 1rem;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.meme__section { 
+    width: 100%;
+    cursor: pointer;
+}
+
+input {
+    position: absolute;
+    opacity: 0;
+}
+
+label {
+    cursor: pointer;
+    border-top: 1px solid rgb(160, 160, 160);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #0059D9;
+    padding: 10px 15px;
+}
+
+.label::after {
+    content: "+";
+    transition: all 1s;
+}
+
+.accordion__content {
+    max-height: 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0 auto;
+    transition: all 1s;
+}
+
+.meme__image {
+    margin: 20px 0;
+    width: 50%;
+}
+
+input:checked + .label {
+    background: rgb(178, 180, 181);
+}
+
+input:checked + .label::after {
+    transform: rotate(405deg);
+}
+
+input:checked ~ .accordion__content {
+    max-height: 100vh;
+}
+
+footer {
+    padding: 20px;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rss-container,
+.git-container {
+    width: 100%;
+}
+
+.RSS {
+    width: 20%;
+}
+
+.Git {
+    width: 10%;
+}
+
+.year {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
