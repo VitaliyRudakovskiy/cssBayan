@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    font-size: 1.5rem;
+    text-decoration: none;   
+}
+
+h1 {
+    font-size: max(2.5em, min(3em, 5.333vw));
+}
+
+h2 {
+    font-size: max(1.5em, min(2em, 4.333vw));
+    font-weight: 700;
+    margin-bottom: 30px;    
+}
+
+h3 {
+    font-size: max(1em, min(1.5em, 3.333vw));
+    font-weight: 700;
+    color: #0059D9;
+    display: flex;
+    justify-content: space-between;
+}
+
+body {
+    font-family: Verdana;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.memes__container:hover .meme__section .label{
+    color: #000000;
+}
+
+.meme__section { 
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.meme__section:active {
+    opacity: 0.75;
+}
+
+input {
+    position: absolute;
+    opacity: 0;
+}
+
+label {
+    cursor: pointer;
+    border-top: 1px solid rgb(164, 161, 160);
+    display: flex;
+    flex-direction: column;
+    padding: 10px 15px;
+}
+
+h3::after {
+    content: "+";
+    transition: all 1s;
+}
+
+.accordion__content {
+    max-height: 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0 auto;
+    transition: all 1s;
+}
+
+.meme__image {
+    margin: 20px 0;
+    width: 60%;
+}
+
+input:checked + .label {
+    background: rgb(187, 235, 235);
+}
+
+input:checked + .label h3::after,
+input:hover + .label h3::after {
+    transform: rotate(405deg);
+}
+
+input:checked + label .accordion__content {
+    max-height: 100vh;
+}
+
+.meme__section:hover .accordion__content {
+    max-height: 100vh;
+}
+
+footer {
+    padding: 20px;
+}
+
+footer .container {
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rss-container,
+.git-container {
+    width: 100%;
+}
+
+.RSS {
+    height: 5vh;
+}
+
+.Git {
+    max-height: 5vh;
+}
+
+.year {
+    font-size: min(1.4em, min(1.5em, 3.333vw));
+    font-weight: 700;
+}
+
+@media(max-width: 660px) {
+    h1 {
+        margin-bottom: 20px;    
+    }
+
+    header .container {
+        flex-direction: column;
+        align-items: start;
+    }
+}
