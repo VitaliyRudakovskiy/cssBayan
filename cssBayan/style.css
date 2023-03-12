@@ -5,6 +5,10 @@
     padding: 0;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 .container {
     max-width: 1240px;
     margin: 0 auto;
@@ -17,19 +21,25 @@ a {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: max(2.5em, min(3em, 5.333vw));
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: max(1.5em, min(2em, 4.333vw));
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 30px;    
+}
+
+h3 {
+    font-size: max(1em, min(1.5em, 3.333vw));
+    font-weight: 700;
+    color: #0059D9;
+    display: flex;
+    justify-content: space-between;
 }
 
 body {
     font-family: Verdana;
-    font-size: 1rem;
-    line-height: 1.6;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -51,8 +61,13 @@ header .container {
 }
 
 .meme__section { 
-    width: 100%;
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
+}
+
+.meme__section:active {
+    opacity: 0.7;
 }
 
 input {
@@ -64,15 +79,11 @@ label {
     cursor: pointer;
     border-top: 1px solid rgb(160, 160, 160);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #0059D9;
+    flex-direction: column;
     padding: 10px 15px;
 }
 
-.label::after {
+h3::after {
     content: "+";
     transition: all 1s;
 }
@@ -88,19 +99,19 @@ label {
 
 .meme__image {
     margin: 20px 0;
-    width: 50%;
+    width: 60%;
 }
 
 input:checked + .label {
-    background: rgb(202, 203, 203);
+    background: rgb(187, 235, 235);
 }
 
-input:checked + .label::after,
-input:hover + .label::after {
+input:checked + .label h3::after,
+input:hover + .label h3::after {
     transform: rotate(405deg);
 }
 
-input:checked ~ .accordion__content {
+input:checked + label .accordion__content {
     max-height: 100vh;
 }
 
@@ -125,18 +136,25 @@ footer .container {
 }
 
 .RSS {
-    width: 13vh;
+    max-width: 12vw;
 }
 
 .Git {
-    width: 7vh;
+    max-width: 7vw;
 }
 
 .year {
-    font-size: 150%;
+    font-size: min(1.4em, min(1.5em, 3.333vw));
     font-weight: 700;
 }
 
-@media(max-width: 1199.98px) {
-    
+@media(max-width: 660px) {
+    h1 {
+        margin-bottom: 20px;    
+    }
+
+    header .container {
+        flex-direction: column;
+        align-items: start;
+    }
 }
